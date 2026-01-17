@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تفاصيل الرعاية | مؤتمر تقنيات الطاقة والتحولات المستقبلية</title>
+  <meta name="description"
+    content="تفاصيل باقات الرعاية والشراكة في مؤتمر تقنيات الطاقة والتحولات المستقبلية – إسطنبول 2026" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background: linear-gradient(135deg, #001f3f 0%, #0074D9 50%, #FFDC00 100%);
+      color: #222;
+      line-height: 1.6;
+      direction: rtl;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* top-bar styles removed */
+
+    .top-bar a {
+      color: #FFDC00;
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 15px;
+      font-size: 0.95em;
+    }
+
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Navigation - Sticky + Active */
+    nav {
+      background: #003366;
+      border-radius: 0 0 10px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 12px 15px;
+      gap: 8px;
+      margin: 0;
+    }
+
+    nav li a {
+      color: #FFDC00;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.95em;
+      display: block;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    nav li a:hover,
+    nav li a.active {
+      background: #FFDC00;
+      color: #001f3f;
+    }
+
+    /* Header and Content Visibility */
+    .header-lang,
+    .lang-content {
+      display: none;
+    }
+
+    .header-lang.active,
+    .lang-content.active {
+      display: block;
+    }
+
+    /* Navigation Visibility (maintains Flexbox) */
+    .nav-lang {
+      display: none;
+    }
+
+    .nav-lang.active {
+      display: flex;
+    }
+
+    th,
+    td {
+      font-size: 0.9em;
+    }
+
+    /* Responsive Helpers */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 1024px) {
+      .container {
+        max-width: 95%;
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 10px auto;
+        padding: 15px;
+        width: 95%;
+      }
+
+      .grid-2,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      nav li a {
+        font-size: 0.85em;
+        padding: 8px 12px;
+        width: auto;
+        display: inline-block;
+      }
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 20px;
+      background: linear-gradient(135deg, #001f3f, #003366);
+      color: #fff;
+      border-radius: 0 0 10px 10px;
+      margin-bottom: 25px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    /* Logo Styling */
+    .logo-img {
+      display: block;
+      margin: 0 auto 12px;
+      max-width: 680px;
+      height: auto;
+      border: none;
+    }
+
+    @media (max-width: 1024px) {
+      .logo-img {
+        max-width: 500px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .logo-img {
+        max-width: 85%;
+      }
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 1.02em;
+      color: #cfe0f5;
+    }
+
+    section {
+      margin: 30px 0;
+      padding: 25px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      /* border-right removed */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #001f3f;
+      margin-bottom: 12px;
+      border-bottom: 3px solid #FFDC00;
+      padding-bottom: 6px;
+    }
+
+    h3 {
+      font-size: 1.2em;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.02em;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-right: 20px;
+      margin-top: 8px;
+    }
+
+    li {
+      margin: 5px 0;
+      font-size: 0.99em;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card-box {
+      background: #fff;
+      padding: 18px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      border-inline-start: 4px solid #0074D9;
+    }
+
+    .card-highlight {
+      border-inline-start: 4px solid #00a0c8;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    th,
+    td {
+      padding: 12px 10px;
+      text-align: center;
+      font-size: 0.95em;
+      border-bottom: 1px solid #e2e6ea;
+    }
+
+    thead th {
+      background: #003366;
+      color: #fff;
+      font-size: 0.97em;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f5f7fa;
+    }
+
+    td:first-child,
+    th:first-child {
+      text-align: right;
+      padding-right: 16px;
+    }
+
+    .cta-box {
+      text-align: center;
+      background: linear-gradient(135deg, #003366, #001f3f);
+      color: #fff;
+      border-radius: 12px;
+      padding: 30px 20px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 8px 6px;
+      padding: 10px 24px;
+      border-radius: 30px;
+      background: #FFDC00;
+      color: #001f3f;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95em;
+      transition: 0.3s;
+    }
+
+    .btn.secondary {
+      background: #fff;
+      color: #003366;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #f8f9fa;
+      margin-top: 20px;
+      padding-bottom: 10px;
+    }
+
+    @media(max-width:768px) {
+      .container {
+        margin: 10px;
+        padding: 15px;
+      }
+
+      .grid-2,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      th,
+      td {
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Top bar removed -->
+
+
+
+    <!-- Navigation -->
+    <nav>
+      <!-- Arabic Nav -->
+      <ul id="nav-ar" class="nav-lang active">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="index.html#about">عن المؤتمر </a></li>
+        <li><a href="index.html#vision">الرؤية </a></li>
+        <li><a href="index.html#objectives">الأهداف </a></li>
+        <li><a href="index.html#themes">المحاور </a></li>
+        <li><a href="index.html#workshops">الورش </a></li>
+        <li><a href="index.html#training">الدورات</a></li>
+        <li><a href="index.html#agenda">الجدول </a></li>
+        <li><a href="index.html#sponsors">الرعاية</a></li>
+        <li><a href="speakers.html">المتحدثون </a></li>
+        <li><a href="sponsorship.html" class="active">الرعاية (تفاصيل)</a></li>
+      </ul>
+      <!-- English Nav -->
+      <ul id="nav-en" class="nav-lang">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#vision">Vision</a></li>
+        <li><a href="index.html#objectives">Objectives</a></li>
+        <li><a href="index.html#themes">Themes</a></li>
+        <li><a href="index.html#workshops">Workshops</a></li>
+        <li><a href="index.html#training">Courses</a></li>
+        <li><a href="index.html#agenda">Agenda</a></li>
+        <li><a href="index.html#sponsors">Sponsors</a></li>
+        <li><a href="speakers.html">Speakers</a></li>
+        <li><a href="sponsorship.html" class="active">Sponsorship Details</a></li>
+      </ul>
+      <!-- Turkish Nav -->
+      <ul id="nav-tr" class="nav-lang">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="index.html#about">Hakkında</a></li>
+        <li><a href="index.html#vision">Vizyon</a></li>
+        <li><a href="index.html#objectives">Hedefler</a></li>
+        <li><a href="index.html#themes">Konular</a></li>
+        <li><a href="index.html#workshops">Atölyeler</a></li>
+        <li><a href="index.html#training">Kurslar</a></li>
+        <li><a href="index.html#agenda">Program</a></li>
+        <li><a href="index.html#sponsors">Sponsorlar</a></li>
+        <li><a href="speakers.html">Konuşmacılar</a></li>
+        <li><a href="sponsorship.html" class="active">Sponsorluk Detayları</a></li>
+      </ul>
+    </nav>
+
+    <!-- قسم فرص الرعاية (جديد) -->
+    <section>
+      <!-- Arabic Content -->
+      <div class="lang-content active" lang="ar">
+        <h2>فرص الرعاية والشراكة</h2>
+        <p>
+          يوفّر المؤتمر منصة استراتيجية للرعاة لتعزيز حضورهم المؤسسي، وبناء شراكات طويلة الأمد، والتواصل المباشر مع
+          صُنّاع القرار وقادة قطاع الطاقة والتقنية على المستويين الإقليمي والدولي.
+        </p>
+      </div>
+
+      <!-- English Content -->
+      <div class="lang-content" lang="en">
+        <h2>Sponsorship & Partnership Opportunities</h2>
+        <p>
+          The conference provides a strategic platform for sponsors to enhance their corporate presence, build
+          long-term partnerships, and directly engage with decision-makers and leaders in the energy and technology
+          sectors at regional and international levels.
+        </p>
+      </div>
+
+      <!-- Turkish Content -->
+      <div class="lang-content" lang="tr">
+        <h2>Sponsorluk ve Ortaklık Fırsatları</h2>
+        <p>
+          Konferans, sponsorların kurumsal varlıklarını güçlendirmeleri, uzun vadeli ortaklıklar kurmaları ve enerji
+          ve teknoloji sektörlerindeki karar vericiler ve liderlerle bölgesel ve uluslararası düzeyde doğrudan
+          etkileşim kurmaları için stratejik bir platform sağlar.
+        </p>
+      </div>
+    </section>
+
+    <!-- قسم مقدمة قصيرة -->
+    <section>
+      <h2>لماذا الرعاية في هذا المؤتمر؟</h2>
+      <p>
+        تُمكّن باقات الرعاية الشركات والمؤسسات من الظهور كأطراف فاعلة في مستقبل قطاع الطاقة والتقنيات المتقدمة، عبر
+        حضور
+        إعلامي ومهني مميّز، ووجود مباشر أمام جمهور متخصص يشمل شركات الطاقة، الجهات التنظيمية، الجامعات، والمستثمرين.
+      </p>
+    </section>
+
+    <!-- الباقة الموصى بها + جدول المقارنة -->
+    <section>
+      <h2>مقارنة باقات الرعاية</h2>
+      <p>
+        يوضح العرض التالي الفروقات الرئيسية بين فئات الرعاية لمساعدة الشركات على اختيار الباقة الأنسب لأهدافها
+        الاستراتيجية.
+      </p>
+
+      <div class="card-box card-highlight" style="margin-top:15px;margin-bottom:20px;">
+        <h3>⭐ الباقة الموصى بها – الراعي الاستراتيجي</h3>
+        <p>الخيار الأمثل للشركات التي تسعى إلى حضور مؤسسي قوي وتأثير استراتيجي متوازن دون التزامات الراعي الرئيسي.
+        </p>
+        <ul>
+          <li>ظهور بارز في الموقع الرسمي والمواد الإعلامية.</li>
+          <li>جناح عرض متوسط في موقع فعّال داخل المعرض.</li>
+          <li>6 بطاقات مشاركة لكبار التنفيذيين.</li>
+          <li>إدراج ضمن الشركاء الاستراتيجيين للمؤتمر.</li>
+        </ul>
+        <p><strong>موصى بها لـ:</strong> الشركات الإقليمية، التحالفات الصناعية، ومقدمي الحلول المتكاملة.</p>
+      </div>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>المزايا</th>
+              <th>الراعي الرئيسي</th>
+              <th>الراعي الاستراتيجي</th>
+              <th>الراعي الذهبي</th>
+              <th>الراعي التقني</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>كلمة افتتاحية</td>
+              <td>✔</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>ظهور الشعار</td>
+              <td>بارز جدًا في جميع المواد</td>
+              <td style="font-weight:700;color:#00a0c8;">ظهور بارز (موصى به)</td>
+              <td>متوسط</td>
+              <td>مرتبط بالجلسات التقنية</td>
+            </tr>
+            <tr>
+              <td>جناح المعرض</td>
+              <td>جناح متميز في موقع استراتيجي</td>
+              <td>جناح متوسط</td>
+              <td>مساحة جانبية</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>عدد بطاقات المشاركة</td>
+              <td>10</td>
+              <td>6</td>
+              <td>4</td>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- البطاقات التفصيلية لكل فئة -->
+    <section>
+      <h2>تفاصيل فئات الرعاية</h2>
+      <div class="grid-2" style="margin-top:10px;">
+
+        <div class="card-box card-highlight">
+          <h3>الراعي الرئيسي</h3>
+          <ul>
+            <li>كلمة افتتاحية في الجلسة الرئيسية للمؤتمر.</li>
+            <li>ظهور قيادي للعلامة التجارية في جميع مواد المؤتمر (الموقع، البرنامج، المواد المطبوعة).</li>
+            <li>جناح عرض مميز في موقع استراتيجي داخل المعرض.</li>
+            <li>10 بطاقات مشاركة مجانية لكبار التنفيذيين.</li>
+            <li>تغطية إعلامية رسمية وإدراج في البيانات الصحفية.</li>
+          </ul>
+          <p><strong>الفئة المستهدفة:</strong> شركات الطاقة الكبرى والشركاء الدوليون.</p>
+        </div>
+
+        <div class="card-box">
+          <h3>الراعي الاستراتيجي</h3>
+          <ul>
+            <li>ظهور بارز في الموقع الرسمي والمواد المطبوعة.</li>
+            <li>جناح عرض متوسط الحجم في المعرض.</li>
+            <li>6 بطاقات مشاركة.</li>
+            <li>إدراج ضمن قائمة الشركاء الاستراتيجيين للمؤتمر.</li>
+          </ul>
+          <p><strong>الفئة المستهدفة:</strong> الشركات الإقليمية والتحالفات الصناعية.</p>
+        </div>
+
+        <div class="card-box">
+          <h3>الراعي الذهبي</h3>
+          <ul>
+            <li>شعار الشركة ضمن قائمة الرعاة الذهبيين في مواد المؤتمر.</li>
+            <li>4 بطاقات مشاركة.</li>
+            <li>مساحة عرض جانبية داخل منطقة المعرض.</li>
+          </ul>
+          <p><strong>الفئة المستهدفة:</strong> شركات الخدمات والاستشارات والتقنية.</p>
+        </div>
+
+        <div class="card-box">
+          <h3>الراعي التقني</h3>
+          <ul>
+            <li>ربط العلامة التجارية بالجلسات التقنية وورش العمل ذات الصلة.</li>
+            <li>ظهور الشعار ضمن جدول الجلسات التقنية والمواد المرتبطة بها.</li>
+            <li>2 بطاقات مشاركة.</li>
+          </ul>
+          <p><strong>الفئة المستهدفة:</strong> شركات الحلول الرقمية، الذكاء الاصطناعي، وأنظمة المراقبة والتحكم.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- قسم الدعوة للتواصل -->
+    <section>
+      <div class="cta-box" id="contact">
+        <h2>هل ترغب في أن تكون شريكًا في هذا الحدث؟</h2>
+        <p style="max-width:800px;margin:10px auto;">
+          نقدّم باقات رعاية مرنة وقابلة للتخصيص بما يتوافق مع أهدافكم المؤسسية واستراتيجياتكم في قطاع الطاقة
+          والتقنية.
+          يسعد فريق الشراكات لدينا بالتواصل معكم لاقتراح الباقة الأنسب والتفاصيل المالية والتنظيمية.
+        </p>
+        <div style="margin-top:15px;">
+          <a href="#" class="btn">تحميل ملف الرعاية (PDF)</a>
+          <a href="mailto:sponsorship@conference2026.com" class="btn secondary">التواصل مع فريق الرعاية</a>
+          <a href="contact.html" class="btn secondary">استفسار عن المؤتمر</a>
+        </div>
+        <p style="margin-top:15px;font-size:0.92em;color:#dde7ff;">
+          سيتم التواصل معكم خلال 24 ساعة من استلام طلبكم من قبل فريق الشراكات الاستراتيجية للمؤتمر.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-ar" class="lang-content active">
+      <footer
+        style="background: linear-gradient(135deg, #001f3f, #003366); color: #fff; text-align: center; padding: 20px; margin-top: 30px; border-radius: 0 0 15px 15px; font-size: 0.95em;">
+        © 2026 مؤتمر تقنيات الطاقة والتحولات المستقبلية – إسطنبول، تركيا
+      </footer>
+    </div>
+    <div id="footer-en" class="lang-content">
+      <footer
+        style="background: linear-gradient(135deg, #001f3f, #003366); color: #fff; text-align: center; padding: 20px; margin-top: 30px; border-radius: 0 0 15px 15px; font-size: 0.95em;">
+        © 2026 Energy Technologies and Future Transitions Conference – Istanbul, Turkiye
+      </footer>
+    </div>
+    <div id="footer-tr" class="lang-content">
+      <footer
+        style="background: linear-gradient(135deg, #001f3f, #003366); color: #fff; text-align: center; padding: 20px; margin-top: 30px; border-radius: 0 0 15px 15px; font-size: 0.95em;">
+        © 2026 Enerji Teknolojileri ve Geleceğin Dönüşümleri Konferansı – İstanbul, Türkiye
+      </footer>
+    </div>
+
+  </div>
+
+  <script>
+    function switchLang(e, lang) {
+      // Tabs
+      document.querySelectorAll('.lang-tab').forEach(el => el.classList.remove('active'));
+      if (e && e.target) e.target.classList.add('active');
+
+      // Header
+      document.querySelectorAll('.header-lang').forEach(el => el.classList.remove('active'));
+      document.getElementById('header-' + lang).classList.add('active');
+
+      // Nav
+      document.querySelectorAll('.nav-lang').forEach(el => el.classList.remove('active'));
+      document.getElementById('nav-' + lang).classList.add('active');
+
+      // Footer (and any other content marked with lang-content if expanding scope later)
+      // Note: Sponsorship main content is currently static/shared or not fully split. 
+      // Assuming for now user only asked for Header/Nav validation. 
+      // But we added footers as .lang-content to toggle them.
+      document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+      // Specific footer toggling if we utilize ID convention
+      if (document.getElementById('footer-' + lang)) {
+        document.getElementById('footer-' + lang).classList.add('active');
+      }
+
+      document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.body.lang = lang;
+      document.documentElement.lang = lang;
+    }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', () => {
+      // Default to Arabic or currently active
+    });
+  </script>
+
+  </div>
+
+</body>
+
+</html>

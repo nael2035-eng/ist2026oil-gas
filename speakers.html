@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speakers & Partners | International Conference 2026</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            background: linear-gradient(135deg, #001f3f 0%, #0074D9 50%, #FFDC00 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
+
+        /* Unprofessional top bar removed */
+
+        /* Navigation - Sticky + Active */
+        nav {
+            background: #003366;
+            border-radius: 0 0 10px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 12px 15px;
+            gap: 8px;
+            margin: 0;
+        }
+
+        nav li a {
+            color: #FFDC00;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95em;
+            display: block;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        nav li a:hover,
+        nav li a.active {
+            background: #FFDC00;
+            color: #001f3f;
+        }
+
+        .nav-lang {
+            display: none;
+        }
+
+        .nav-lang.active {
+            display: flex;
+        }
+
+        /* Header - Multi-language */
+        header {
+            text-align: center;
+            padding: 30px 20px 25px;
+            background: linear-gradient(135deg, #001f3f, #003366);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header-lang {
+            display: none;
+        }
+
+        .header-lang.active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 8px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .header-tagline {
+            font-size: 1em;
+            opacity: 0.95;
+        }
+
+        /* Logo Styling */
+        .logo-img {
+            display: block;
+            margin: 0 auto 12px;
+            max-width: 680px;
+            height: auto;
+            border: none;
+        }
+
+        @media (max-width: 1024px) {
+            .logo-img {
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-img {
+                max-width: 85%;
+            }
+        }
+
+        .date-location {
+            font-size: 1em;
+            opacity: 0.95;
+            margin-top: 6px;
+        }
+
+        /* Language Tabs */
+        .lang-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .lang-tab {
+            background: #0074D9;
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+
+        .lang-tab:hover {
+            background: #FFDC00;
+            color: #001f3f;
+            transform: translateY(-2px);
+        }
+
+        .lang-tab.active {
+            background: #FFDC00;
+            color: #001f3f;
+            box-shadow: 0 5px 15px rgba(255, 220, 0, 0.4);
+        }
+
+        /* Content */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Sections */
+        section {
+            margin: 25px 0;
+            padding: 22px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            /* border-right removed */
+        }
+
+        h2 {
+            color: #001f3f;
+            font-size: 1.5em;
+            margin-bottom: 12px;
+            border-bottom: 3px solid #FFDC00;
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            color: #003366;
+            font-size: 1.15em;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 1.03em;
+        }
+
+        ul {
+            padding-right: 20px;
+            margin-top: 6px;
+        }
+
+        li {
+            margin: 5px 0;
+            font-size: 1.02em;
+        }
+
+        /* Grids & cards */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card-box {
+            background: white;
+            padding: 16px 18px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border-inline-start: 4px solid #0074D9;
+        }
+
+        .card-box h3 {
+            margin-bottom: 6px;
+        }
+
+        .card-box small {
+            display: block;
+            color: #555;
+            margin-bottom: 4px;
+            font-size: 0.9em;
+        }
+
+        /* Note */
+        .note {
+            font-size: 0.92em;
+            color: #555;
+            margin-top: 4px;
+        }
+
+        /* Speakers */
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-top: 15px;
+        }
+
+        .speaker-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+            border-inline-start: 4px solid #FFDC00;
+            transition: transform 0.3s;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .speaker-photo {
+            width: 110px;
+            height: 110px;
+            background: #ddd;
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            color: #0074D9;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .container {
+                max-width: 95%;
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .speakers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .container {
+                margin: 10px auto;
+                padding: 15px;
+                width: 95%;
+            }
+
+            section {
+                padding: 16px;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            nav li a {
+                font-size: 0.85em;
+                padding: 8px 12px;
+                width: auto;
+                display: inline-block;
+            }
+        }
+
+        footer {
+            background: linear-gradient(135deg, #001f3f, #003366);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 0 0 15px 15px;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="container">
+
+        <!-- Multi-language Header -->
+
+
+        <!-- Navigation -->
+        <nav>
+            <!-- Arabic Nav -->
+            <ul id="nav-ar" class="nav-lang active">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="index.html#about">عن المؤتمر </a></li>
+                <li><a href="index.html#vision">الرؤية </a></li>
+                <li><a href="index.html#objectives">الأهداف </a></li>
+                <li><a href="index.html#themes">المحاور </a></li>
+                <li><a href="index.html#workshops">الورش </a></li>
+                <li><a href="index.html#training">الدورات</a></li>
+                <li><a href="index.html#agenda">الجدول </a></li>
+                <li><a href="index.html#sponsors">الرعاية</a></li>
+                <li><a href="speakers.html" class="active">المتحدثون </a></li>
+                <li><a href="sponsorship.html">الرعاية (تفاصيل)</a></li>
+            </ul>
+            <!-- English Nav -->
+            <ul id="nav-en" class="nav-lang">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#vision">Vision</a></li>
+                <li><a href="index.html#objectives">Objectives</a></li>
+                <li><a href="index.html#themes">Themes</a></li>
+                <li><a href="index.html#workshops">Workshops</a></li>
+                <li><a href="index.html#training">Courses</a></li>
+                <li><a href="index.html#agenda">Agenda</a></li>
+                <li><a href="index.html#sponsors">Sponsors</a></li>
+                <li><a href="speakers.html" class="active">Speakers</a></li>
+                <li><a href="sponsorship.html">Sponsorship Details</a></li>
+            </ul>
+            <!-- Turkish Nav -->
+            <ul id="nav-tr" class="nav-lang">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="index.html#about">Hakkında</a></li>
+                <li><a href="index.html#vision">Vizyon</a></li>
+                <li><a href="index.html#objectives">Hedefler</a></li>
+                <li><a href="index.html#themes">Konular</a></li>
+                <li><a href="index.html#workshops">Atölyeler</a></li>
+                <li><a href="index.html#training">Kurslar</a></li>
+                <li><a href="index.html#agenda">Program</a></li>
+                <li><a href="index.html#sponsors">Sponsorlar</a></li>
+                <li><a href="speakers.html" class="active">Konuşmacılar</a></li>
+                <li><a href="sponsorship.html">Sponsorluk Detayları</a></li>
+            </ul>
+        </nav>
+
+        <!-- Language Tabs -->
+        <div class="lang-tabs">
+            <button class="lang-tab active" onclick="switchLang(event, 'ar')">🇸🇦 العربية</button>
+            <button class="lang-tab" onclick="switchLang(event, 'en')">🇺🇸 English</button>
+            <button class="lang-tab" onclick="switchLang(event, 'tr')">🇹🇷 Türkçe</button>
+        </div>
+
+        <!-- Arabic Content -->
+        <div id="ar-content" class="lang-content active" lang="ar" dir="rtl">
+            <section>
+                <div
+                    style="text-align: center; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #e0e0e0;">
+                    <h1 style="color: #003366; font-size: 2.2em; margin-bottom: 10px;">المتحدثون والرعاة</h1>
+                    <p style="font-size: 1.2em; color: #555; margin-bottom: 5px;">قسم خاص بالمتحدثين الرئيسيين والجهات
+                        الراعية والمعلومات العامة</p>
+                    <p style="color: #0074D9; font-weight: bold; font-size: 1.1em;">إسطنبول – تركيا | 15 – 17 يونيو 2026
+                    </p>
+                </div>
+
+                <h2>المتحدثون الرئيسيون</h2>
+                <div class="speakers-grid">
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👨‍🔬</div>
+                        <h3>....</h3>
+                        <p><strong>خبير الطاقة المتجددة</strong><br>....</p>
+                        <small>الكلمة الرئيسية – اليوم الأول</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👩‍🔬</div>
+                        <h3>....</h3>
+                        <p><strong>خبيرة الذكاء الاصطناعي</strong><br>....</p>
+                        <small>الكلمة الرئيسية – اليوم الثاني</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👨‍💼</div>
+                        <h3>....</h3>
+                        <p><strong>خبير الاستثمارات الطاقية</strong><br>....</p>
+                        <small>محور الاستثمارات والتحولات المستقبلية</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👨‍🔧</div>
+                        <h3>....</h3>
+                        <p><strong>خبير السلامة والوقاية الصناعية</strong><br>....</p>
+                        <small>ورشة العمل الثانية – السلامة والمراقبة</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👨‍💻</div>
+                        <h3>....</h3>
+                        <p><strong>خبير الحقول الذكية والتحول الرقمي</strong><br>....</p>
+                        <small>جلسات التحول الرقمي والحقول الذكية</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👩‍💼</div>
+                        <h3>....</h3>
+                        <p><strong>خبيرة الاستدامة والطاقة المتجددة</strong><br>....</p>
+                        <small>جلسات الاستدامة ومبادرات الحياد الصفري</small>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>الجهات الراعية والشريكة</h2>
+                <div class="grid-3">
+                    <div class="card-box">
+                        <h3>🛢️ الراعي الرئيسي</h3>
+                        <p><strong>....</strong></p>
+                        <p>الداعم الرئيس لبرنامج المؤتمر والمعرض المصاحب</p>
+                    </div>
+                    <div class="card-box">
+                        <h3>⚡ الراعي الاستراتيجي</h3>
+                        <p><strong>....</strong></p>
+                        <p>داعم الجلسات التقنية المتقدمة ومشاريع التحول الرقمي</p>
+                    </div>
+                    <div class="card-box">
+                        <h3>🌍 الراعي الذهبي</h3>
+                        <p><strong>....</strong></p>
+                        <p>داعم ورش العمل الفنية والدورات التدريبية</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>معلومات التسجيل والمشاركة</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>💳 رسوم التسجيل</h3>
+                        <ul>
+                            <li>المشاركة العادية: $ 0000</li>
+                            <li>المشاركة مع ورش العمل (+): $ 0000</li>
+                            <li>الدورات التدريبية القصيرة: $ 0000 لليوم الواحد</li>
+                            <li>خصم 20% للتسجيل المبكر والمؤسسات الشريكة</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>📞 بيانات التواصل</h3>
+                        <p><strong>البريد الإلكتروني: info@energyconf2026.com</strong></p>
+                        <p>واتساب: +966 000 000000</p>
+                        <p>هاتف: +90 000 000 0000</p>
+                        <p>الموقع الإلكتروني: www.energyconf2026.com</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>الموقع والفنادق الشريكة</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>📍 موقع المؤتمر</h3>
+                        <p><strong>مركز مؤتمرات إسطنبول (ICC)</strong></p>
+                        <p>منطقة شيشلي، إسطنبول، تركيا</p>
+                        <small>حوالي 15 دقيقة من مطار إسطنبول الجديد</small>
+                    </div>
+                    <div class="card-box">
+                        <h3>🏨 خيارات الإقامة</h3>
+                        <ul>
+                            <li>فنادق 5 نجوم: حوالي $ 0000 /ليلة</li>
+                            <li>فنادق 4 نجوم: حوالي $ 0000 /ليلة</li>
+                            <li>باقات خاصة للمشاركين في المؤتمر</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <footer>
+                © 2026 مؤتمر تقنيات الطاقة والتحولات المستقبلية – إسطنبول، تركيا
+            </footer>
+        </div>
+
+        <!-- English Content -->
+        <div id="en-content" class="lang-content" lang="en" dir="ltr">
+            <section>
+                <h2>Keynote Speakers</h2>
+                <div class="speakers-grid">
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👨‍🔬</div>
+                        <h3>....</h3>
+                        <p><strong>Renewable Energy Expert</strong><br>....</p>
+                        <small>Opening Keynote – Day 1</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👩‍🔬</div>
+                        <h3>....</h3>
+                        <p><strong>Artificial Intelligence Expert</strong><br>....</p>
+                        <small>Keynote – Day 2</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👨‍💼</div>
+                        <h3>....</h3>
+                        <p><strong>Energy Investment Expert</strong><br>....</p>
+                        <small>Energy Investments & Future Transitions Track</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👨‍🔧</div>
+                        <h3>....</h3>
+                        <p><strong>Industrial Safety Expert</strong><br>....</p>
+                        <small>Technical Workshop 2 – Safety & Monitoring</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👨‍💻</div>
+                        <h3>....</h3>
+                        <p><strong>Smart Fields & Digital Solutions Lead</strong><br>....</p>
+                        <small>Smart Fields & Digital Transformation Sessions</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👩‍💼</div>
+                        <h3>....</h3>
+                        <p><strong>Sustainability & Renewables Specialist</strong><br>....</p>
+                        <small>Sustainability & Net-Zero Initiatives Track</small>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Sponsors & Partners</h2>
+                <div class="grid-3">
+                    <div class="card-box">
+                        <h3>🛢️ Main Sponsor</h3>
+                        <p><strong>....</strong></p>
+                        <p>Main supporter of the conference and exhibition</p>
+                    </div>
+                    <div class="card-box">
+                        <h3>⚡ Strategic Sponsor</h3>
+                        <p><strong>....</strong></p>
+                        <p>Supporter of advanced technical sessions and digital initiatives</p>
+                    </div>
+                    <div class="card-box">
+                        <h3>🌍 Gold Sponsor</h3>
+                        <p><strong>....</strong></p>
+                        <p>Supporter of technical workshops and training programs</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Registration & Participation</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>💳 Registration Fees</h3>
+                        <ul>
+                            <li>Standard Participation: $ 0000</li>
+                            <li>With Workshops (+): $ 0000</li>
+                            <li>Short Training Courses: $ 0000 per day</li>
+                            <li>20% Early-Bird and Partner Discount</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>📞 Contact Details</h3>
+                        <p><strong>Email: info@energyconf2026.com</strong></p>
+                        <p>WhatsApp: +966 500 123456</p>
+                        <p>Phone: +90 212 123 4567</p>
+                        <p>Website: www.energyconf2026.com</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Venue & Accommodation</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>📍 Venue</h3>
+                        <p><strong>Istanbul Congress Center (ICC)</strong></p>
+                        <p>Şişli district, Istanbul, Türkiye</p>
+                        <small>Approximately 15 minutes from Istanbul New Airport</small>
+                    </div>
+                    <div class="card-box">
+                        <h3>🏨 Partner Hotels</h3>
+                        <ul>
+                            <li>5-Star Hotels: around $ 0000 / night</li>
+                            <li>4-Star Hotels: around $ 0000 / night</li>
+                            <li>Special packages for conference participants</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <footer>
+                © 2026 Energy Technologies and Future Transitions Conference – Istanbul, Turkiye
+            </footer>
+        </div>
+
+        <!-- Turkish Content -->
+        <div id="tr-content" class="lang-content" lang="tr" dir="ltr">
+            <section>
+                <h2>Ana Konuşmacılar</h2>
+                <div class="speakers-grid">
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👨‍🔬</div>
+                        <h3>....</h3>
+                        <p><strong>Yenilenebilir Enerji Uzmanı</strong><br>....</p>
+                        <small>1. Gün Açılış Konuşması</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👩‍🔬</div>
+                        <h3>....</h3>
+                        <p><strong>Yapay Zeka Uzmanı</strong><br>....</p>
+                        <small>2. Gün Ana Konuşmacı</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👨‍💼</div>
+                        <h3>....</h3>
+                        <p><strong>Enerji Yatırım Uzmanı</strong><br>....</p>
+                        <small>Enerji Yatırımları ve Gelecek Dönüşümleri Oturumu</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👨‍💻</div>
+                        <h3>....</h3>
+                        <p><strong>Akıllı Sahalar & Dijital Çözümler Lideri</strong><br>....</p>
+                        <small>Akıllı Sahalar ve Dijital Dönüşüm Oturumları</small>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-photo">👩‍💼</div>
+                        <h3>....</h3>
+                        <p><strong>Sürdürülebilirlik ve Yenilenebilir Enerji Uzmanı</strong><br>....</p>
+                        <small>Sürdürülebilirlik ve Net-Sıfır Girişimleri Oturumu</small>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Sponsorlar & Ortaklar</h2>
+                <div class="grid-3">
+                    <div class="card-box">
+                        <h3>🛢️ Ana Sponsor</h3>
+                        <p><strong>....</strong></p>
+                        <p>Konferans ve serginin ana destekçisi</p>
+                    </div>
+                    <div class="card-box">
+                        <h3>⚡ Stratejik Sponsor</h3>
+                        <p><strong>....</strong></p>
+                        <p>İleri teknik oturumlar ve dijital girişimler destekçisi</p>
+                    </div>
+                    <div class="card-box">
+                        <h3>🌍 Altın Sponsor</h3>
+                        <p><strong>....</strong></p>
+                        <p>Atölye çalışmaları ve eğitim programları destekçisi</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Kayıt & Katılım</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>💳 Kayıt Ücretleri</h3>
+                        <ul>
+                            <li>Standart Katılım: $ 0000</li>
+                            <li>Atölyeler ile (+): $ 0000</li>
+                            <li>Kısa Eğitim Kursları: $ 0000 / gün</li>
+                            <li>Erken kayıt ve ortak kurumlar için %20 indirim</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>📞 İletişim Bilgileri</h3>
+                        <p><strong>E-posta: info@energyconf2026.com</strong></p>
+                        <p>WhatsApp: +966 500 123456</p>
+                        <p>Telefon: +90 212 123 4567</p>
+                        <p>Web: www.energyconf2026.com</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Mekan & Konaklama</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>📍 Mekan</h3>
+                        <p><strong>İstanbul Kongre Merkezi (ICC)</strong></p>
+                        <p>Şişli, İstanbul, Türkiye</p>
+                        <small>İstanbul Yeni Havalimanı'na yaklaşık 15 dakika</small>
+                    </div>
+                    <div class="card-box">
+                        <h3>🏨 Ortak Oteller</h3>
+                        <ul>
+                            <li>5 Yıldızlı Oteller: yaklaşık $ 0000 / gece</li>
+                            <li>4 Yıldızlı Oteller: yaklaşık $ 0000 / gece</li>
+                            <li>Konferans katılımcıları için özel paketler</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <footer>
+                © 2026 Enerji Teknolojileri ve Geleceğin Dönüşümleri Konferansı – İstanbul, Türkiye
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(e, lang) {
+            // Update language tabs
+            document.querySelectorAll('.lang-tab').forEach(el => el.classList.remove('active'));
+            if (e && e.target) e.target.classList.add('active');
+
+            // Switch header
+            document.querySelectorAll('.header-lang').forEach(el => el.classList.remove('active'));
+            document.getElementById('header-' + lang).classList.add('active');
+
+            // Switch content
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(lang + '-content').classList.add('active');
+
+            document.querySelectorAll('.nav-lang').forEach(el => el.classList.remove('active'));
+            document.getElementById('nav-' + lang).classList.add('active');
+
+            // Update body direction
+            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.body.lang = lang;
+            document.documentElement.lang = lang;
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            switchLang({ target: document.querySelector('.lang-tab.active') }, 'ar');
+        });
+    </script>
+
+</body>
+
+</html>

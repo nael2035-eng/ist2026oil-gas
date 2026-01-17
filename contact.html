@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا | مؤتمر تقنيات الطاقة والتحولات المستقبلية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            background: linear-gradient(135deg, #001f3f 0%, #0074D9 50%, #FFDC00 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
+
+        /* Logo Separation */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .logo-img {
+            max-width: 680px;
+            height: auto;
+            display: inline-block;
+        }
+
+        @media (max-width: 1024px) {
+            .logo-img {
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-img {
+                max-width: 85%;
+            }
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #001f3f, #003366);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .header-lang {
+            display: none;
+        }
+
+        .header-lang.active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p.desc {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: #003366;
+            border-radius: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 12px 15px;
+            gap: 8px;
+            margin: 0;
+        }
+
+        nav li a {
+            color: #FFDC00;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95em;
+            display: block;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        nav li a:hover,
+        nav li a.active {
+            background: #FFDC00;
+            color: #001f3f;
+        }
+
+        .nav-lang {
+            display: none;
+        }
+
+        .nav-lang.active {
+            display: flex;
+        }
+
+        /* Content */
+        section {
+            padding: 40px 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+        }
+
+        .contact-info h3,
+        .contact-form h3 {
+            color: #003366;
+            border-bottom: 2px solid #FFDC00;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .info-item span {
+            margin-inline-end: 15px;
+            font-size: 1.5em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .btn-submit {
+            background: #0074D9;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #0056a3;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #001f3f, #003366);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 0 0 15px 15px;
+            font-size: 0.95em;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Logo -->
+        <div class="logo-container"
+            style="background: linear-gradient(135deg, #001f3f, #003366); padding: 15px; border-radius: 15px; margin-bottom: 20px;">
+            <a href="index.html">
+                <img src="Logo-1.png" alt="ETFTC Logo" class="logo-img" style="margin-bottom:0;">
+            </a>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <div id="header-ar" class="header-lang active">
+                <h1>تواصل معنا والاستفسارات</h1>
+                <p class="desc">نحن هنا للإجابة على استفساراتكم ومساعدتكم في كل ما يتعلق بالمؤتمر</p>
+            </div>
+            <div id="header-en" class="header-lang">
+                <h1>Contact Us & Inquiries</h1>
+                <p class="desc">We are here to answer your inquiries and assist you with everything related to the
+                    conference</p>
+            </div>
+            <div id="header-tr" class="header-lang">
+                <h1>İletişim ve Sorular</h1>
+                <p class="desc">Sorularınızı yanıtlamak ve konferansla ilgili her konuda size yardımcı olmak için
+                    buradayız</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav>
+            <ul id="nav-ar" class="nav-lang active">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="sponsorship.html">فرص الرعاية</a></li>
+                <li><a href="contact.html" class="active">تواصل معنا</a></li>
+            </ul>
+            <ul id="nav-en" class="nav-lang">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sponsorship.html">Sponsorship</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+            <ul id="nav-tr" class="nav-lang">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="sponsorship.html">Sponsorluk</a></li>
+                <li><a href="contact.html" class="active">İletişim</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <section>
+            <div class="lang-content active" lang="ar">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>معلومات التواصل</h3>
+                        <div class="info-item"><span>📧</span> sponsorship@conference2026.com</div>
+                        <div class="info-item"><span>📞</span> +90 000 000 0000</div>
+                        <div class="info-item"><span>📍</span> إسطنبول، تركيا</div>
+                        <p style="margin-top:20px; color:#666;">ساعات العمل: الاثنين - الجمعة (9:00 ص - 6:00 م)</p>
+                    </div>
+                    <div class="contact-form">
+                        <h3>نموذج الاستفسار</h3>
+                        <form>
+                            <div class="form-group">
+                                <label>الاسم الكامل</label>
+                                <input type="text" placeholder="أدخل اسمك الكريم">
+                            </div>
+                            <div class="form-group">
+                                <label>البريد الإلكتروني</label>
+                                <input type="email" placeholder="بريدك الإلكتروني">
+                            </div>
+                            <div class="form-group">
+                                <label>الموضوع</label>
+                                <input type="text" placeholder="موضوع الاستفسار">
+                            </div>
+                            <div class="form-group">
+                                <label>الرسالة</label>
+                                <textarea placeholder="اكتب استفسارك هنا..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">إرسال الاستفسار</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lang-content" lang="en">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="info-item"><span>📧</span> sponsorship@conference2026.com</div>
+                        <div class="info-item"><span>📞</span> +90 000 000 0000</div>
+                        <div class="info-item"><span>📍</span> Istanbul, Turkiye</div>
+                        <p style="margin-top:20px; color:#666;">Working Hours: Mon - Fri (9:00 AM - 6:00 PM)</p>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Inquiry Form</h3>
+                        <form>
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="Your Email">
+                            </div>
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input type="text" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea placeholder="Write your message here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Send Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lang-content" lang="tr">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>İletişim Bilgileri</h3>
+                        <div class="info-item"><span>📧</span> sponsorship@conference2026.com</div>
+                        <div class="info-item"><span>📞</span> +90 000 000 0000</div>
+                        <div class="info-item"><span>📍</span> İstanbul, Türkiye</div>
+                        <p style="margin-top:20px; color:#666;">Çalışma Saatleri: Pzt - Cum (09:00 - 18:00)</p>
+                    </div>
+                    <div class="contact-form">
+                        <h3>İletişim Formu</h3>
+                        <form>
+                            <div class="form-group">
+                                <label>Ad Soyad</label>
+                                <input type="text" placeholder="Adınız">
+                            </div>
+                            <div class="form-group">
+                                <label>E-posta</label>
+                                <input type="email" placeholder="E-posta adresiniz">
+                            </div>
+                            <div class="form-group">
+                                <label>Konu</label>
+                                <input type="text" placeholder="Konu">
+                            </div>
+                            <div class="form-group">
+                                <label>Mesaj</label>
+                                <textarea placeholder="Mesajınız..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Gönder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div id="footer-ar" class="lang-content active">
+            <footer>© 2026 مؤتمر تقنيات الطاقة والتحولات المستقبلية – إسطنبول، تركيا</footer>
+        </div>
+        <div id="footer-en" class="lang-content">
+            <footer>© 2026 Energy Technologies and Future Transitions Conference – Istanbul, Turkiye</footer>
+        </div>
+        <div id="footer-tr" class="lang-content">
+            <footer>© 2026 Enerji Teknolojileri ve Geleceğin Dönüşümleri Konferansı – İstanbul, Türkiye</footer>
+        </div>
+
+    </div>
+
+    <script>
+        function switchLang(e, lang) {
+            // Header
+            document.querySelectorAll('.header-lang').forEach(el => el.classList.remove('active'));
+            document.getElementById('header-' + lang).classList.add('active');
+
+            // Nav
+            document.querySelectorAll('.nav-lang').forEach(el => el.classList.remove('active'));
+            document.getElementById('nav-' + lang).classList.add('active');
+
+            // Content
+            document.querySelectorAll('.lang-content').forEach(el => {
+                el.classList.remove('active');
+                if (el.getAttribute('lang') === lang || el.id === 'footer-' + lang) {
+                    el.classList.add('active');
+                }
+            });
+
+            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+        }
+    </script>
+</body>
+
+</html>

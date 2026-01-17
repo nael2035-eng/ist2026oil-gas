@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤتمر تقنيات الطاقة والتحولات المستقبلية</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            background: linear-gradient(135deg, #001f3f 0%, #0074D9 50%, #FFDC00 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
+
+        /* Multi-language Header */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #001f3f, #003366);
+            color: white;
+            border-radius: 15px;
+            /* Full rounded corners */
+            margin-bottom: 20px;
+            /* Gap between header and nav */
+            position: relative;
+        }
+
+        .header-lang {
+            display: none;
+        }
+
+        .header-lang.active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.4em;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .date-location {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-top: 10px;
+        }
+
+        /* Logo Styling */
+        .logo-img {
+            display: block;
+            margin: 0 auto 12px;
+            max-width: 680px;
+            height: auto;
+            border: none;
+        }
+
+        @media (max-width: 1024px) {
+            .logo-img {
+                max-width: 500px;
+                /* Tablet size */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-img {
+                max-width: 85%;
+                /* Mobile size */
+            }
+        }
+
+        /* Navigation - Sticky + Active */
+        nav {
+            background: #003366;
+            border-radius: 10px;
+            /* Full rounded corners */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 12px 15px;
+            gap: 8px;
+            margin: 0;
+        }
+
+        nav li a {
+            color: #FFDC00;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95em;
+            display: block;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        nav li a:hover,
+        nav li a.active {
+            background: #FFDC00;
+            color: #001f3f;
+        }
+
+        .nav-lang {
+            display: none;
+        }
+
+        .nav-lang.active {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .nav-lang.active {
+                display: flex;
+                /* Ensure it stays flex */
+            }
+        }
+
+        /* Language Tabs */
+        .lang-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .lang-tab {
+            background: #0074D9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .lang-tab:hover {
+            background: #FFDC00;
+            color: #001f3f;
+            transform: translateY(-2px);
+        }
+
+        .lang-tab.active {
+            background: #FFDC00;
+            color: #001f3f;
+            box-shadow: 0 5px 15px rgba(255, 220, 0, 0.4);
+        }
+
+        /* Content */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Sections */
+        section {
+            margin: 40px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            /* border-right removed for redundancy */
+            scroll-margin-top: 120px;
+        }
+
+        h2 {
+            color: #001f3f;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #FFDC00;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #003366;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            color: #003366;
+            font-size: 1.05em;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 1.05em;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-right: 20px;
+            margin-top: 8px;
+        }
+
+        li {
+            margin: 6px 0;
+            font-size: 1.03em;
+        }
+
+        /* Grids & cards */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card-box {
+            background: white;
+            padding: 18px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border-inline-start: 4px solid #0074D9;
+        }
+
+        .card-box h3 {
+            margin-bottom: 8px;
+        }
+
+        .card-box small {
+            display: block;
+            color: #555;
+            margin-bottom: 6px;
+            font-size: 0.95em;
+        }
+
+        .note {
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .container {
+                max-width: 95%;
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .container {
+                margin: 10px auto;
+                padding: 15px;
+                width: 95%;
+            }
+
+            section {
+                padding: 18px;
+                scroll-margin-top: 140px;
+                margin: 20px 0;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                /* Changed from column to wrap */
+                justify-content: center;
+                gap: 8px;
+                /* Adjusted gap */
+            }
+
+            nav li a {
+                font-size: 0.85em;
+                /* Slightly smaller text */
+                padding: 8px 12px;
+                width: auto;
+                /* Allow auto width */
+                display: inline-block;
+                /* Ensure proper sizing */
+            }
+        }
+
+        footer {
+            background: linear-gradient(135deg, #001f3f, #003366);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 0 0 15px 15px;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Multi-language Header -->
+        <!-- Navigation (Top for Unified Stability) -->
+        <nav>
+            <!-- Arabic Nav -->
+            <ul id="nav-ar" class="nav-lang active">
+                <li><a href="index.html" onclick="scrollToSection('header-ar', event)">الرئيسية</a></li>
+                <li><a href="#about" onclick="scrollToSection('about', event)">عن المؤتمر </a></li>
+                <li><a href="#vision" onclick="scrollToSection('vision', event)">الرؤية </a></li>
+                <li><a href="#objectives" onclick="scrollToSection('objectives', event)">الأهداف </a></li>
+                <li><a href="#themes" onclick="scrollToSection('themes', event)">المحاور </a></li>
+                <li><a href="#workshops" onclick="scrollToSection('workshops', event)">الورش </a></li>
+                <li><a href="#training" onclick="scrollToSection('training', event)">الدورات</a></li>
+                <li><a href="#agenda" onclick="scrollToSection('agenda', event)">الجدول </a></li>
+                <li><a href="#sponsors" onclick="scrollToSection('sponsors', event)">الرعاية</a></li>
+                <li><a href="speakers.html">المتحدثون </a></li>
+                <li><a href="sponsorship.html">الرعاية (تفاصيل)</a></li>
+            </ul>
+
+            <!-- English Nav -->
+            <ul id="nav-en" class="nav-lang">
+                <li><a href="index.html" onclick="scrollToSection('header-en', event)">Home</a></li>
+                <li><a href="#about" onclick="scrollToSection('about', event)">About</a></li>
+                <li><a href="#vision" onclick="scrollToSection('vision', event)">Vision</a></li>
+                <li><a href="#objectives" onclick="scrollToSection('objectives', event)">Objectives</a></li>
+                <li><a href="#themes" onclick="scrollToSection('themes', event)">Themes</a></li>
+                <li><a href="#workshops" onclick="scrollToSection('workshops', event)">Workshops</a></li>
+                <li><a href="#training" onclick="scrollToSection('training', event)">Courses</a></li>
+                <li><a href="#agenda" onclick="scrollToSection('agenda', event)">Agenda</a></li>
+                <li><a href="#sponsors" onclick="scrollToSection('sponsors', event)">Sponsors</a></li>
+                <li><a href="speakers.html">Speakers</a></li>
+                <li><a href="sponsorship.html">Sponsorship Details</a></li>
+            </ul>
+
+            <!-- Turkish Nav -->
+            <ul id="nav-tr" class="nav-lang">
+                <li><a href="index.html" onclick="scrollToSection('header-tr', event)">Ana Sayfa</a></li>
+                <li><a href="#about" onclick="scrollToSection('about', event)">Hakkında</a></li>
+                <li><a href="#vision" onclick="scrollToSection('vision', event)">Vizyon</a></li>
+                <li><a href="#objectives" onclick="scrollToSection('objectives', event)">Hedefler</a></li>
+                <li><a href="#themes" onclick="scrollToSection('themes', event)">Konular</a></li>
+                <li><a href="#workshops" onclick="scrollToSection('workshops', event)">Atölyeler</a></li>
+                <li><a href="#training" onclick="scrollToSection('training', event)">Kurslar</a></li>
+                <li><a href="#agenda" onclick="scrollToSection('agenda', event)">Program</a></li>
+                <li><a href="#sponsors" onclick="scrollToSection('sponsors', event)">Sponsorlar</a></li>
+                <li><a href="speakers.html">Konuşmacılar</a></li>
+                <li><a href="sponsorship.html">Sponsorluk Detayları</a></li>
+            </ul>
+        </nav>
+
+        <!-- Logo Container -->
+        <div class="logo-container"
+            style="text-align: center; background: linear-gradient(135deg, #001f3f, #003366); padding: 15px; border-radius: 15px; margin-top: 20px; margin-bottom: 20px;">
+            <a href="index.html">
+                <img src="Logo-1.png" alt="ETFTC Logo" class="logo-img" style="margin-bottom:0;">
+            </a>
+        </div>
+
+        <!-- Multi-language Header (Titles Only) -->
+        <header>
+            <!-- Arabic Header -->
+            <div id="header-ar" class="header-lang active">
+                <h1>
+                    مؤتمر تقنيات الطاقة والتحولات المستقبلية<br>
+                    ـ ETFTC 2026 ـ
+                </h1>
+                <p class="date-location"><strong>15 – 17 يونيو 2026،&nbsp;&nbsp;إسطنبول ـ تركيا</strong></p>
+            </div>
+
+            <!-- English Header -->
+            <div id="header-en" class="header-lang">
+                <h1>
+                    Energy Technologies and Future Transitions Conference<br>
+                    ـ ETFTC 2026 ـ
+                </h1>
+                <p class="date-location">15–17 June 2026, Istanbul – Turkiye</p>
+            </div>
+
+            <!-- Turkish Header -->
+            <div id="header-tr" class="header-lang">
+                <h1>
+                    Enerji Teknolojileri ve Geleceğin Dönüşümleri Konferansı<br>
+                    ـ ETFTC 2026 ـ
+                </h1>
+                <p class="date-location">15–17 Haziran 2026, İstanbul – Türkiye</p>
+            </div>
+        </header>
+
+        <!-- Language Tabs -->
+        <div class="lang-tabs">
+            <button class="lang-tab active" onclick="switchLang(event, 'ar')">🇸🇦 العربية</button>
+            <button class="lang-tab" onclick="switchLang(event, 'en')">🇺🇸 English</button>
+            <button class="lang-tab" onclick="switchLang(event, 'tr')">🇹🇷 Türkçe</button>
+        </div>
+
+        <!-- Arabic Content -->
+        <div id="ar-content" class="lang-content active" lang="ar" dir="rtl">
+
+            <section id="about">
+                <h2>نبذة عن المؤتمر</h2>
+                <p>
+                    يُمثّل المؤتمر الدولي لتقنيات النفط والطاقة والغاز والتحولات المستقبلية (ETFTC 2026) منصة دولية
+                    متقدمة تجمع قادة الصناعة،
+                    والخبراء، والشركات العالمية،
+                    إلى جانب الجهات المطوِّرة للتقنيات الحديثة في مجالات النفط والغاز والطاقة المتجددة. يهدف المؤتمر إلى
+                    تسليط الضوء على أحدث
+                    التطورات التقنية في قطاع الطاقة، وفتح آفاق الحوار حول مستقبل القطاع، والتحول الرقمي، والابتكار،
+                    والاستدامة، وربط هذه التطورات
+                    باحتياجات الصناعة الفعلية. كما يوفر المؤتمر بيئة مهنية لتبادل الخبرات، وبناء الشراكات، واستعراض
+                    الحلول العملية التي تدعم نمو
+                    قطاع الطاقة واستدامته على المستويين الإقليمي والدولي.
+                </p>
+            </section>
+
+            <section id="vision">
+                <h2>الرؤية والرسالة</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>الرؤية</h3>
+                        <p>
+                            تعزيز المعرفة التقنية وتبادل الخبرات بين المختصين والمؤسسات في قطاع الطاقة، ودعم تطوير
+                            الممارسات الحديثة
+                            والتوجهات المستقبلية التي تربط بين الابتكار، والتحول الرقمي، والاستدامة من جهة، واحتياجات
+                            الصناعة الواقعية من جهة أخرى.
+                        </p>
+                    </div>
+                    <div class="card-box">
+                        <h3>الرسالة</h3>
+                        <p>
+                            تقديم منصة مهنية تجمع صنّاع القرار، والخبراء، وشركات الطاقة، إلى جانب مطوّري الحلول الرقمية
+                            والتقنيات الحديثة؛
+                            لعرض أحدث التطورات، ومناقشة التحديات المستقبلية، واستكشاف فرص التعاون والاستثمار التي تسهم
+                            في نمو القطاع وتعزيز استدامته على المدى الطويل.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="objectives">
+                <h2>الأهداف</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <p>إبراز التقنيات المتقدمة في مجالات النفط والغاز والطاقة المتجددة.</p>
+                    </div>
+                    <div class="card-box">
+                        <p>تعزيز التواصل والتكامل بين الشركات والخبراء والجهات الحكومية والتنظيمية.</p>
+                    </div>
+                    <div class="card-box">
+                        <p>دعم الشراكات والاستثمارات المستقبلية في قطاع الطاقة.</p>
+                    </div>
+                    <div class="card-box">
+                        <p>تقديم محتوى علمي وتطبيقي متقدم يواكب التطورات العالمية في قطاع الطاقة.</p>
+                    </div>
+                    <div class="card-box">
+                        <p>تعزيز التكامل بين الطاقة التقليدية والمتجددة بما يدعم التحولات المستقبلية في أنظمة الطاقة.
+                        </p>
+                    </div>
+                    <div class="card-box">
+                        <p>توفير ورش عمل ودورات تدريبية متخصصة تُنمّي المهارات العملية والتطبيقية للمشاركين.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="themes">
+                <h2>المحاور العلمية للمؤتمر</h2>
+                <div class="grid-3">
+                    <div class="card-box">
+                        <h3>اليوم الأول – الصناعة والتحول في قطاع الطاقة</h3>
+                        <ul>
+                            <li>الاتجاهات العالمية في أسواق الطاقة.</li>
+                            <li>سياسات الاستكشاف والإنتاج.</li>
+                            <li>التقنيات المتقدمة في تحليل المكامن.</li>
+                            <li>التحول الطاقي ومتطلبات المستقبل.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>اليوم الثاني – التقنية والسلامة</h3>
+                        <ul>
+                            <li>الحقول الذكية والتحول الرقمي.</li>
+                            <li>أنظمة المراقبة والتحكم.</li>
+                            <li>إدارة المخاطر في منشآت النفط والغاز.</li>
+                            <li>تطبيقات الذكاء الاصطناعي في قطاع الطاقة.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>اليوم الثالث – الاستثمار والبنية التحتية</h3>
+                        <ul>
+                            <li>مستقبل الاستثمارات في قطاع الطاقة.</li>
+                            <li>تطوير خطوط الأنابيب والمنشآت التكريرية.</li>
+                            <li>الشراكات بين القطاعين العام والخاص.</li>
+                            <li>تطوير الكفاءات البشرية في قطاع الطاقة.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="workshops">
+                <h2>ورش العمل الفنية داخل المؤتمر</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>ورشة عمل 1 – اليوم الثاني (بعد الظهر)</h3>
+                        <small>العنوان: التحول الرقمي وتطبيقات الذكاء الاصطناعي في الحقول النفطية</small>
+                        <h4>المحاور:</h4>
+                        <ul>
+                            <li>نماذج تحليل البيانات وتطبيقاتها العملية.</li>
+                            <li>التنبؤ بالإنتاج وصيانة المعدات التنبؤية.</li>
+                            <li>تحسين العمليات التشغيلية باستخدام تقنيات الذكاء الاصطناعي.</li>
+                            <li>دراسات حالة وتطبيقات عملية من شركات عالمية رائدة.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>ورشة عمل 2 – اليوم الثالث (بعد الظهر)</h3>
+                        <small>العنوان: تقنيات الأمان والمراقبة في منشآت النفط والغاز</small>
+                        <h4>المحاور:</h4>
+                        <ul>
+                            <li>الأنظمة الاستشعارية الحديثة وتقنيات الكشف المبكر.</li>
+                            <li>تقييم المخاطر التشغيلية وإعداد خرائط المخاطر.</li>
+                            <li>آليات الاستجابة للحوادث والحالات الطارئة.</li>
+                            <li>إدارة الأزمات واستمرارية الأعمال في منشآت الطاقة.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="training">
+                <h2>الدورات التدريبية القصيرة<br><small>(يوم مستقل قبل المؤتمر أو بعده)</small></h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>الدورة التدريبية الأولى – يوم واحد</h3>
+                        <small>العنوان: تقنيات الطاقة المتجددة وتكاملها مع الشبكات التقليدية</small>
+                        <h4>المحتوى:</h4>
+                        <ul>
+                            <li>مصادر الطاقة المتجددة وأنواعها وتطبيقاتها الحديثة.</li>
+                            <li>مبادئ التكامل الفني مع الشبكات الكهربائية التقليدية.</li>
+                            <li>التحديات التشغيلية والفنية لربط الطاقة المتجددة بالشبكات.</li>
+                            <li>فرص الاستثمار والتطبيقات الصناعية في مشاريع الطاقة المتجددة.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>الدورة التدريبية الثانية – يومان</h3>
+                        <small>العنوان: إدارة المشاريع في قطاع النفط والغاز</small>
+                        <h4>المحتوى:</h4>
+                        <ul>
+                            <li>تخطيط المشاريع ومراحل التنفيذ.</li>
+                            <li>تحليل المخاطر وإدارتها.</li>
+                            <li>إدارة التكاليف والموارد والميزانيات.</li>
+                            <li>أفضل الممارسات والأدوات الإدارية المستخدمة في قطاع النفط والغاز.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="agenda">
+                <h2>جدول المؤتمر</h2>
+                <div class="grid-3">
+                    <div class="card-box">
+                        <h3>اليوم الأول</h3>
+                        <ul>
+                            <li>09:00–09:30 الافتتاح الرسمي.</li>
+                            <li>09:30–11:00 الجلسة الرئيسية / كلمات الافتتاح.</li>
+                            <li>11:00–13:00 جلسة: استراتيجيات الاستكشاف والإنتاج.</li>
+                            <li>13:00–14:00 استراحة غداء (مع إمكانية زيارة المعرض).</li>
+                            <li>14:00–16:00 حلقة نقاش: التحول الطاقي.</li>
+                            <li>16:00–16:30 لقاءات تعريفية وتعارف بين الشركات (Networking).</li>
+                            <li>16:30–المساء افتتاح المعرض واستمرار فعاليات الـ Networking.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>اليوم الثاني<br><small>(المعرض مفتوح طوال اليوم من 09:00)</small></h3>
+                        <ul>
+                            <li>09:00–11:00 جلسة: الحقول الذكية والتحول الرقمي.</li>
+                            <li>11:00–11:30 استراحة قهوة وزيارة المعرض.</li>
+                            <li>11:30–13:00 جلسة: أنظمة المراقبة والتحكم.</li>
+                            <li>13:00–14:00 استراحة غداء قرب المعرض.</li>
+                            <li>14:00–16:00 ورشة عمل 1.</li>
+                            <li>16:00–المساء وقت حر لزيارة المعرض واستكمال اللقاءات.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>اليوم الثالث<br><small>(المعرض مفتوح طوال اليوم من 09:00)</small></h3>
+                        <ul>
+                            <li>09:00–11:00 جلسة: الاستثمارات في الطاقة.</li>
+                            <li>11:00–13:00 استراحة قهوة + جلسة: تطوير البنية التحتية.</li>
+                            <li>13:00–14:00 استراحة غداء.</li>
+                            <li>14:00–15:30 ورشة عمل 2.</li>
+                            <li>15:30–16:30 الجلسة الختامية وإعلان التوصيات.</li>
+                            <li>إغلاق المعرض في نهاية اليوم.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-box" style="margin-top:20px;">
+                    <h3>اليوم الرابع (اختياري – مدفوع)</h3>
+                    <p>دورة تدريبية كاملة وفق الخطة التنظيمية المعتمدة.</p>
+                </div>
+            </section>
+
+            <section id="sponsors">
+                <h2>فئات الرعاية</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>الراعي الرئيسي</h3>
+                        <ul>
+                            <li>كلمة افتتاحية في الجلسة الافتتاحية.</li>
+                            <li>وضع الشعار بشكل بارز على المواد الإعلامية والمطبوعات.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>الراعي الاستراتيجي</h3>
+                        <ul>
+                            <li>وضع الشعار على اللوحات الداخلية والإعلانات.</li>
+                            <li>جناح متوسط الحجم في المعرض.</li>
+                            <li>6 بطاقات مشاركة مجانية.</li>
+                            <li>إدراج اسم الشركة في المواد الرسمية للمؤتمر.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>الراعي الذهبي</h3>
+                        <ul>
+                            <li>وضع الشعار على موقع المؤتمر ومواد التواصل.</li>
+                            <li>4 بطاقات مشاركة مجانية.</li>
+                            <li>مساحة عرض جانبية في المعرض.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>الراعي التقني</h3>
+                        <ul>
+                            <li>وضع الشعار على ملصقات الجلسات التقنية.</li>
+                            <li>2 بطاقات مشاركة مجانية.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                © 2026 مؤتمر تقنيات الطاقة والتحولات المستقبلية – إسطنبول، تركيا
+            </footer>
+        </div>
+
+        <!-- English Content -->
+        <div id="en-content" class="lang-content" lang="en" dir="ltr">
+            <section id="about">
+                <h2>Conference Overview</h2>
+                <p>
+                    The Energy Technologies and Future Transitions Conference (ETFTC 2026) brings together industry
+                    leaders, experts,
+                    global companies, and technology developers from across the energy spectrum. The event highlights
+                    the latest
+                    advancements in oil, gas, and renewable energy technologies, while opening the door for meaningful
+                    discussions
+                    on the future of the sector. It provides a professional environment for exchanging expertise,
+                    building partnerships,
+                    and presenting practical solutions that support the growth and sustainability of the energy industry
+                    at regional
+                    and international levels.
+                </p>
+            </section>
+
+            <section id="vision">
+                <h2>Vision & Mission</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>Vision</h3>
+                        <p>
+                            To strengthen technical knowledge and promote the exchange of expertise among professionals
+                            and institutions
+                            in the energy sector, while supporting the development of modern practices and
+                            future-oriented approaches that
+                            connect innovation, digital transformation, and sustainability with real industry needs.
+                        </p>
+                    </div>
+                    <div class="card-box">
+                        <h3>Mission</h3>
+                        <p>
+                            To provide a professional platform that brings together decision-makers, experts, and energy
+                            companies—
+                            alongside developers of digital solutions—to showcase advancements, discuss emerging
+                            challenges, and explore
+                            opportunities for collaboration and investment that contribute to the sector’s growth and
+                            long-term sustainability.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="objectives">
+                <h2>Objectives</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <p>Highlight advanced technologies in oil, gas, and renewable energy.</p>
+                    </div>
+                    <div class="card-box">
+                        <p>Strengthen communication and integration among companies, experts, and government entities.
+                        </p>
+                    </div>
+                    <div class="card-box">
+                        <p>Support future partnerships and investments in the energy sector.</p>
+                    </div>
+                    <div class="card-box">
+                        <p>Provide scientific and practical content aligned with global developments.</p>
+                    </div>
+                    <div class="card-box">
+                        <p>Promote integration between conventional and renewable energy to support future transitions.
+                        </p>
+                    </div>
+                    <div class="card-box">
+                        <p>Offer specialized workshops and training programs that enhance participants’ practical
+                            skills.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="themes">
+                <h2>Scientific Tracks</h2>
+                <div class="grid-3">
+                    <div class="card-box">
+                        <h3>Day One – Industry and Energy Transition</h3>
+                        <ul>
+                            <li>Global trends in energy markets.</li>
+                            <li>Exploration and production policies.</li>
+                            <li>Advanced reservoir analysis technologies.</li>
+                            <li>Energy transition and future requirements.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Day Two – Technology and Safety</h3>
+                        <ul>
+                            <li>Smart fields and digital transformation.</li>
+                            <li>Monitoring and control systems.</li>
+                            <li>Risk management in oil and gas facilities.</li>
+                            <li>Artificial intelligence in the energy sector.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Day Three – Investment and Infrastructure</h3>
+                        <ul>
+                            <li>Future of energy investments.</li>
+                            <li>Pipeline development and refining facilities.</li>
+                            <li>Public–private sector partnerships.</li>
+                            <li>Human capital development in the energy sector.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="workshops">
+                <h2>Technical Workshops</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>Workshop 1 – Day Two (Afternoon)</h3>
+                        <small>Title: Digital Transformation and AI Applications in Oilfields</small>
+                        <h4>Topics:</h4>
+                        <ul>
+                            <li>Data analytics models and applications.</li>
+                            <li>Production forecasting and predictive maintenance.</li>
+                            <li>Enhancing operational efficiency using AI.</li>
+                            <li>Case studies and global industry examples.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Workshop 2 – Day Three (Afternoon)</h3>
+                        <small>Title: Safety and Monitoring Technologies in Oil and Gas Facilities</small>
+                        <h4>Topics:</h4>
+                        <ul>
+                            <li>Modern sensing systems and early detection technologies.</li>
+                            <li>Operational risk assessment and risk mapping.</li>
+                            <li>Emergency response mechanisms.</li>
+                            <li>Crisis management and business continuity.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="training">
+                <h2>Short Training Courses<br><small>(Held on a separate day before or after the conference)</small>
+                </h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>Course 1 – One Day</h3>
+                        <small>Title: Renewable Energy Technologies and Grid Integration</small>
+                        <h4>Content:</h4>
+                        <ul>
+                            <li>Renewable energy sources and modern applications.</li>
+                            <li>Technical integration with conventional electrical grids.</li>
+                            <li>Operational and technical challenges of renewable integration.</li>
+                            <li>Investment opportunities and industrial applications.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Course 2 – Two Days</h3>
+                        <small>Title: Project Management in the Oil and Gas Sector</small>
+                        <h4>Content:</h4>
+                        <ul>
+                            <li>Project planning and execution phases.</li>
+                            <li>Risk analysis and management.</li>
+                            <li>Cost, resource, and budget management.</li>
+                            <li>Best administrative practices and tools used in the sector.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="agenda">
+                <h2>Conference Schedule</h2>
+                <div class="grid-3">
+                    <div class="card-box">
+                        <h3>Day One</h3>
+                        <ul>
+                            <li>09:00–09:30 Official Opening.</li>
+                            <li>09:30–11:00 Keynote Session.</li>
+                            <li>11:00–13:00 Session: Exploration and Production Strategies.</li>
+                            <li>13:00–14:00 Lunch Break (with optional exhibition visit).</li>
+                            <li>14:00–16:00 Panel Discussion: Energy Transition.</li>
+                            <li>16:00–16:30 Business Networking.</li>
+                            <li>16:30–Evening Exhibition Opening and Networking Activities.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Day Two<br><small>(Exhibition open from 09:00)</small></h3>
+                        <ul>
+                            <li>09:00–11:00 Session: Smart Fields and Digital Transformation.</li>
+                            <li>11:00–11:30 Coffee Break and Exhibition Visit.</li>
+                            <li>11:30–13:00 Session: Monitoring and Control Systems.</li>
+                            <li>13:00–14:00 Lunch Break near the exhibition.</li>
+                            <li>14:00–16:00 Workshop 1.</li>
+                            <li>16:00–Evening Free time for exhibition visits.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Day Three<br><small>(Exhibition open from 09:00)</small></h3>
+                        <ul>
+                            <li>09:00–11:00 Session: Energy Investments.</li>
+                            <li>11:00–13:00 Coffee Break + Session: Infrastructure Development.</li>
+                            <li>13:00–14:00 Lunch Break.</li>
+                            <li>14:00–15:30 Workshop 2.</li>
+                            <li>15:30–16:30 Closing Session and Recommendations.</li>
+                            <li>Exhibition closes at the end of the day.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-box" style="margin-top:20px;">
+                    <h3>Day Four (Optional – Paid)</h3>
+                    <p>Full training course (based on the organizational plan).</p>
+                </div>
+            </section>
+
+            <section id="sponsors">
+                <h2>Sponsorship Categories</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>Main Sponsor</h3>
+                        <ul>
+                            <li>Opening speech.</li>
+                            <li>Prominent logo placement on media materials.</li>
+                            <li>Premium exhibition booth.</li>
+                            <li>10 complimentary passes.</li>
+                            <li>Mention in the press conference.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Strategic Sponsor</h3>
+                        <ul>
+                            <li>Logo on internal banners and advertisements.</li>
+                            <li>Medium-sized booth.</li>
+                            <li>6 complimentary passes.</li>
+                            <li>Inclusion in official materials.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Gold Sponsor</h3>
+                        <ul>
+                            <li>Logo on the conference website and communication materials.</li>
+                            <li>4 complimentary passes.</li>
+                            <li>Side exhibition space.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Technical Sponsor</h3>
+                        <ul>
+                            <li>Logo on technical session posters.</li>
+                            <li>2 complimentary passes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            </section>
+
+            <footer>
+                © 2026 Energy Technologies and Future Transitions Conference – Istanbul, Turkiye
+            </footer>
+        </div>
+
+        <!-- Turkish Content -->
+        <div id="tr-content" class="lang-content" lang="tr" dir="ltr">
+            <section id="about">
+                <h2>Konferans Hakkında</h2>
+                <p>
+                    Uluslararası Enerji Teknolojileri ve Geleceğin Dönüşümleri Konferansı; petrol, gaz ve yenilenebilir
+                    enerji alanlarında
+                    faaliyet gösteren sektör liderlerini, uzmanları, küresel şirketleri ve teknoloji geliştiricilerini
+                    bir araya getiren
+                    profesyonel bir platformdur. Etkinlik, enerji sektöründeki en son teknolojik gelişmeleri tanıtmayı,
+                    sektörün geleceğine ilişkin
+                    derinlemesine tartışmalar yürütmeyi ve dijital dönüşüm ile inovasyonun sürdürülebilirlik üzerindeki
+                    etkilerini ele almayı
+                    amaçlamaktadır. Konferans, bilgi paylaşımı, iş birliği geliştirme ve bölgesel ile uluslararası
+                    düzeyde sektörün büyümesini
+                    destekleyen pratik çözümler sunma fırsatı sağlar.
+                </p>
+            </section>
+
+            <section id="vision">
+                <h2>Vizyon ve Misyon</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>Vizyon</h3>
+                        <p>
+                            Enerji sektöründe faaliyet gösteren uzmanlar ve kurumlar arasında teknik bilgi birikimini
+                            güçlendirmek,
+                            deneyim paylaşımını teşvik etmek ve inovasyon, dijital dönüşüm ve sürdürülebilirliği
+                            sektörün gerçek ihtiyaçlarıyla
+                            buluşturan modern uygulamaların geliştirilmesini desteklemek.
+                        </p>
+                    </div>
+                    <div class="card-box">
+                        <h3>Misyon</h3>
+                        <p>
+                            Karar vericileri, uzmanları, enerji şirketlerini ve dijital çözüm geliştiricilerini bir
+                            araya getirerek sektördeki
+                            güncel gelişmelerin sunulmasını, geleceğin zorluklarının tartışılmasını ve sektörün
+                            büyümesine ve uzun vadeli
+                            sürdürülebilirliğine katkı sağlayacak iş birliği ve yatırım fırsatlarının keşfedilmesini
+                            sağlamak.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="objectives">
+                <h2>Hedefler</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <p>Petrol, gaz ve yenilenebilir enerji alanlarındaki ileri teknolojileri öne çıkarmak.</p>
+                    </div>
+                    <div class="card-box">
+                        <p>Şirketler, uzmanlar ve kamu kurumları arasındaki iletişimi ve entegrasyonu güçlendirmek.</p>
+                    </div>
+                    <div class="card-box">
+                        <p>Enerji sektöründe geleceğe yönelik ortaklıkları ve yatırımları desteklemek.</p>
+                    </div>
+                    <div class="card-box">
+                        <p>Küresel gelişmelere uyumlu bilimsel ve uygulamalı içerik sunmak.</p>
+                    </div>
+                    <div class="card-box">
+                        <p>Geleneksel ve yenilenebilir enerji kaynakları arasında entegrasyonu teşvik ederek enerji
+                            dönüşümünü desteklemek.</p>
+                    </div>
+                    <div class="card-box">
+                        <p>Katılımcıların pratik becerilerini geliştiren uzmanlaşmış atölye ve eğitim programları
+                            sunmak.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="themes">
+                <h2>Bilimsel Oturum Başlıkları</h2>
+                <div class="grid-3">
+                    <div class="card-box">
+                        <h3>Birinci Gün – Sanayi ve Enerji Dönüşümü</h3>
+                        <ul>
+                            <li>Küresel enerji piyasalarındaki eğilimler.</li>
+                            <li>Arama ve üretim politikaları.</li>
+                            <li>İleri rezervuar analiz teknolojileri.</li>
+                            <li>Enerji dönüşümü ve geleceğin gereksinimleri.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>İkinci Gün – Teknoloji ve Güvenlik</h3>
+                        <ul>
+                            <li>Akıllı sahalar ve dijital dönüşüm.</li>
+                            <li>İzleme ve kontrol sistemleri.</li>
+                            <li>Petrol ve gaz tesislerinde risk yönetimi.</li>
+                            <li>Enerji sektöründe yapay zekâ uygulamaları.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Üçüncü Gün – Yatırım ve Altyapı</h3>
+                        <ul>
+                            <li>Enerji yatırımlarının geleceği.</li>
+                            <li>Boru hattı geliştirme ve rafineri tesisleri.</li>
+                            <li>Kamu–özel sektör iş birlikleri.</li>
+                            <li>Enerji sektöründe insan kaynağı geliştirme.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="workshops">
+                <h2>Teknik Atölye Çalışmaları</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>Atölye 1 – İkinci Gün (Öğleden Sonra)</h3>
+                        <small>Başlık: Dijital Dönüşüm ve Petrol Sahalarında Yapay Zekâ Uygulamaları</small>
+                        <h4>Konular:</h4>
+                        <ul>
+                            <li>Veri analitiği modelleri ve uygulamaları.</li>
+                            <li>Üretim tahmini ve kestirimci bakım.</li>
+                            <li>Yapay zekâ ile operasyonel verimliliğin artırılması.</li>
+                            <li>Küresel şirketlerden örnek vaka çalışmaları.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Atölye 2 – Üçüncü Gün (Öğleden Sonra)</h3>
+                        <small>Başlık: Petrol ve Gaz Tesislerinde Güvenlik ve İzleme Teknolojileri</small>
+                        <h4>Konular:</h4>
+                        <ul>
+                            <li>Modern algılama sistemleri ve erken uyarı teknolojileri.</li>
+                            <li>Operasyonel risk değerlendirmesi ve risk haritalama.</li>
+                            <li>Acil durum müdahale mekanizmaları.</li>
+                            <li>Kriz yönetimi ve iş sürekliliği.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="training">
+                <h2>Kısa Süreli Eğitim Programları<br><small>(Konferans öncesi veya sonrası ayrı bir günde
+                        düzenlenir)</small></h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>Eğitim 1 – Bir Gün</h3>
+                        <small>Başlık: Yenilenebilir Enerji Teknolojileri ve Şebeke Entegrasyonu</small>
+                        <h4>İçerik:</h4>
+                        <ul>
+                            <li>Yenilenebilir enerji kaynakları ve modern uygulamalar.</li>
+                            <li>Geleneksel elektrik şebekeleriyle teknik entegrasyon.</li>
+                            <li>Yenilenebilir enerji entegrasyonunun teknik ve operasyonel zorlukları.</li>
+                            <li>Yatırım fırsatları ve endüstriyel uygulamalar.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Eğitim 2 – İki Gün</h3>
+                        <small>Başlık: Petrol ve Gaz Sektöründe Proje Yönetimi</small>
+                        <h4>İçerik:</h4>
+                        <ul>
+                            <li>Proje planlama ve uygulama aşamaları.</li>
+                            <li>Risk analizi ve yönetimi.</li>
+                            <li>Maliyet, kaynak ve bütçe yönetimi.</li>
+                            <li>Sektörde kullanılan en iyi yönetim uygulamaları.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="agenda">
+                <h2>Konferans Programı</h2>
+                <div class="grid-3">
+                    <div class="card-box">
+                        <h3>Birinci Gün</h3>
+                        <ul>
+                            <li>09:00–09:30 Resmî Açılış.</li>
+                            <li>09:30–11:00 Açılış Konuşmaları / Ana Oturum.</li>
+                            <li>11:00–13:00 Oturum: Arama ve Üretim Stratejileri.</li>
+                            <li>13:00–14:00 Öğle Arası (İsteğe bağlı fuar ziyareti).</li>
+                            <li>14:00–16:00 Panel: Enerji Dönüşümü.</li>
+                            <li>16:00–16:30 İş Ağı Oluşturma.</li>
+                            <li>16:30–Akşam Fuar Açılışı ve Networking Etkinlikleri.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>İkinci Gün<br><small>(Fuar 09:00’dan itibaren açıktır)</small></h3>
+                        <ul>
+                            <li>09:00–11:00 Oturum: Akıllı Sahalar ve Dijital Dönüşüm.</li>
+                            <li>11:00–11:30 Kahve Arası ve Fuar Ziyareti.</li>
+                            <li>11:30–13:00 Oturum: İzleme ve Kontrol Sistemleri.</li>
+                            <li>13:00–14:00 Öğle Arası.</li>
+                            <li>14:00–16:00 Atölye 1.</li>
+                            <li>16:00–Akşam Serbest Fuar Ziyareti.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Üçüncü Gün<br><small>(Fuar 09:00’dan itibaren açıktır)</small></h3>
+                        <ul>
+                            <li>09:00–11:00 Oturum: Enerji Yatırımları.</li>
+                            <li>11:00–13:00 Kahve Arası + Oturum: Altyapı Geliştirme.</li>
+                            <li>13:00–14:00 Öğle Arası.</li>
+                            <li>14:00–15:30 Atölye 2.</li>
+                            <li>15:30–16:30 Kapanış Oturumu ve Tavsiyeler.</li>
+                            <li>Gün sonunda fuar kapanışı.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-box" style="margin-top:20px;">
+                    <h3>Dördüncü Gün (Opsiyonel – Ücretli)</h3>
+                    <p>Tam günlük eğitim programı (organizasyon planına göre).</p>
+                </div>
+            </section>
+
+            <section id="sponsors">
+                <h2>Sponsorluk Kategorileri</h2>
+                <div class="grid-2">
+                    <div class="card-box">
+                        <h3>Ana Sponsor</h3>
+                        <ul>
+                            <li>Açılış konuşması.</li>
+                            <li>Medya materyallerinde öne çıkan logo kullanımı.</li>
+                            <li>Premium fuar standı.</li>
+                            <li>10 ücretsiz katılım kartı.</li>
+                            <li>Basın toplantısında şirket isminin duyurulması.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Stratejik Sponsor</h3>
+                        <ul>
+                            <li>İç mekân afişlerinde logo.</li>
+                            <li>Orta boyutlu fuar standı.</li>
+                            <li>6 ücretsiz katılım kartı.</li>
+                            <li>Resmî materyallerde yer alma.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Altın Sponsor</h3>
+                        <ul>
+                            <li>Konferans web sitesinde ve iletişim materyallerinde logo.</li>
+                            <li>4 ücretsiz katılım kartı.</li>
+                            <li>Yan fuar alanı.</li>
+                        </ul>
+                    </div>
+                    <div class="card-box">
+                        <h3>Teknik Sponsor</h3>
+                        <ul>
+                            <li>Teknik oturum afişlerinde logo.</li>
+                            <li>2 ücretsiz katılım kartı.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            </section>
+
+            <footer>
+                © 2026 Enerji Teknolojileri ve Geleceğin Dönüşümleri Konferansı – İstanbul, Türkiye
+            </footer>
+        </div>
+
+    </div>
+
+    <script>
+        function switchLang(e, lang) {
+            document.querySelectorAll('.lang-tab').forEach(el => el.classList.remove('active'));
+            if (e && e.target) e.target.classList.add('active');
+
+            document.querySelectorAll('.header-lang').forEach(el => el.classList.remove('active'));
+            document.getElementById('header-' + lang).classList.add('active');
+
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(lang + '-content').classList.add('active');
+
+            document.querySelectorAll('.nav-lang').forEach(el => el.classList.remove('active'));
+            document.getElementById('nav-' + lang).classList.add('active');
+
+            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.body.lang = lang;
+            document.documentElement.lang = lang;
+        }
+
+        function scrollToSection(sectionId, event) {
+            if (event) event.preventDefault();
+
+            // First try to find the element within the active content (for shared IDs like 'about')
+            let element = document.querySelector('.lang-content.active #' + sectionId);
+
+            // If not found, try finding it globally (for unique IDs like 'header-ar')
+            if (!element) {
+                element = document.getElementById(sectionId);
+            }
+
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                if (event && event.target) event.target.classList.add('active');
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            const activeContent = document.querySelector('.lang-content.active');
+            if (!activeContent) return;
+            const sections = activeContent.querySelectorAll('section[id]');
+            let current = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 150 && rect.top > -300) {
+                    current = section.getAttribute('id');
+                }
+            });
+            if (current) {
+                document.querySelectorAll('nav a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstLink = document.querySelector('nav a[href="#about"]');
+            if (firstLink) firstLink.classList.add('active');
+        });
+    </script>
+
+</body>
+
+</html>
